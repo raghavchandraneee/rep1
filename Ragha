@@ -1,0 +1,16 @@
+rsion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="libnwbc.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="libnwbcx.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="liboam.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="liboamcommon.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="liboamfm.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="liboamswm.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="libosal.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="libosalsctp.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="libowamp.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="libpdm.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="librms.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="librr.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="librulechk.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="libsfs.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
+                        <file fileName="libsftp.so.xcg"  fileVersion="26.A.0.01"  path="/pkg/lib"/>
