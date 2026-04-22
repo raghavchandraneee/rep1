@@ -1,6 +1,42 @@
-Assumptions and Dependencies
-It was confirmed that there is currently no function to control the Inhibit information of the ORU ALD alarm by providing a function as
-a method of controlling the Inhibit information of the AlarmItem.
-Since it is necessary to control whether to report AlarmItem, it is necessary to consider the related functions, suppression keep mode,
-flooding, and ne unit inhibition operation.
-Both FM/AM are required to be deployed in the FM_FEL as a feature that must be provided.
+2.1	Introduction
+This feature provides statistics for GSM teleservices with SMS, FAX, CS data characteristics over the Circuit Switched Data calls.
+
+There was a limitation in the legacy BSC package. From the existing counter framework it is not possible to detect the HIGH CALL SETUP TIME issue that occurs when the MT UE receives a paging message from the MSC late. HIGH CALL SETUP TIME issues often cause complaints from OPERATOR due to a significant decrease in user expierence quality. To mitigate this issue, in SVR26A a new counter needs to be developed that can calculate time from BSSAP ASSIGNMENT COMPLETE to ALERTING reception so that HIGH CALL SETUP TIME can be detected early and the occurrence frequency and occurrence CELL can be analyzed.
+
+
+2.2	Functional Requirements 
+Table 1.	S/W High Level Functional Requirements
+S/W Requirement ID	HLD Requirement ID	HLD
+Requirement
+Description	Related S/W Blocks	FDM
+No.
+FR 91	FR91.CA2G.SR1.HD1	BSC shall support new index ""EstabCauseGSM"" in counter family CS_CALL_REL_BS.
+
+EstabCauseGSM should include below causes:
+LOCATION UPDATE, ORIGINATING CALL, OTHER PROCEDURE, EMERGENCY CALL, CHNL REQ CSDATA, CALL REEST, PAGING RESPONSE
+a)		GSCB	N/A
+FR200	FR200.CA2G.SR1.HD1	BSC shall save the timestamp when  BSSAP ASSIGNMENT RESPONSE is sent to MSC in its Job Context for each Call	GSCB	N/A
+	FR200.CA2G.SR1.HD2	BSC shall save the timestamp when  CC ALERTING received from MSC in its Job Context for each Call	GSCB	N/A
+	FR200.CA2G.SR1.HD3	BSC shall compute the time difference for the delay in CC ALERTING and BSSAP ASSIGNMENT RESPONSE.
+	GSCB	N/A
+	FR200.CA2G.SR1.HD4	BSC shall peg the below counter in a new counter family only for MO Call Scenario :
+Family Name: CS_CALL_ALERT_DELAY
+Indexes: BPP_ID,BTS_ID, PLMN, LAC, GSM_CellIdentity
+Counter Type: CSMO_ASSIGNMENT_ALERTING_DELAY
+This family provides statistics for the E2E call setup procedure for alerting delay due to paging MT.
+CSMO_ASSIGNMENT_ALERTING_DELAY_AVG
+CSMO_ASSIGNMENT_ALERTING_DELAY_TOTAL
+CSMO_ASSIGNMENT_ALERTING_DELAY_CNT	GSCB/OAM	N/A
+※ FDM (Feature Dependency Matrix)
+
+
+Table 2.	Feature Dependency Matrix for S/W Functional Requirements
+
+FDM No.	#n
+Dependent
+Features	Dependency description
+	Feature
+Activation/Deactivation	Algorithm	Fault Mgmt. (Alarm),
+Event or
+Notification Mgmt
+NA			
